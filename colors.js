@@ -10,13 +10,16 @@ var canvas = document.getElementById('canvas');
 var context = canvas.getContext('2d');
 var image = context.createImageData(imageWidth, imageHeight);
 
-for (let i = 0; i < image.data.length; i += 4) {
-  var x = image.data.getX();
-  var y = image.data.getY();
-  if (x < imageWidth / 2) {
+console.log("image width: " + image.width + " height: " + image.height);
+console.log("image data length: " + image.data.length);
+
+for (var i = 0; i < image.data.length; i += 4) {
+  var x = i;
+  var y = i;
+  if (x < image.width / 2) {
     image.data[i + red] = 255;
   } 
-  if (y > imageHeight / 2) {
+  if (y > image.height / 2) {
     image.data[i + blue] = 255;
   } else {
     image.data[i + green] = 255;
