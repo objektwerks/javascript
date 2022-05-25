@@ -1,0 +1,2 @@
+# javascript
+Random Javascript snippets.
