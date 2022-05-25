@@ -17,16 +17,16 @@ for (let i = 0; i < image.data.length; i += 4) {
 context.putImageData(image, 25, 25);
 
 function drawColors(context, image) {
-  for (var pixel of image.values()){
-    var x = pixel.getX();
-    var y = pixel.getY();
+  for (let i = 0; i < image.data.length; i += 4) {
+    var x = image.data.getX();
+    var y = image.data.getY();
     if (x < image.getWidth() / 2){
-      pixel.setRed(255);
+      image.data[i + red] = 255;
     } 
     if (y > image.getHeight() / 2){
-      pixel.setBlue(255);
+      image.data[i + blue] = 255;
     } else {
-      pixel.setGreen(255);
+      image.data[i + green] = 255;
     }
   }
   context.putImageData(image, 25, 25);
