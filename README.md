@@ -1,2 +1,3 @@
-# javascript
-Random Javascript snippets.
+Javascript
+----------
+>Random Javascript snippets.
