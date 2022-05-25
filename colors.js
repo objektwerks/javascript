@@ -8,13 +8,7 @@ const green = 1;
 const blue = 2;
 const alpha = 3;
 
-for (let i = 0; i < image.data.length; i += 4) {
-  image.data[i + red] = 255;
-  image.data[i + green] = 0;
-  image.data[i + blue] = 0;
-  image.data[i + alpha] = 255;
-}
-context.putImageData(image, 25, 25);
+drawColors(context, image);
 
 function drawColors(context, image) {
   for (let i = 0; i < image.data.length; i += 4) {
