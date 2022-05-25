@@ -16,6 +16,8 @@ console.assert(imageHeight === image.height);
 const halfImageWidth = imageWidth / 2;
 const halfImageHeight = imageHeight / 2;
 
+var redSet = 0;
+
 for (var i = 0; i < image.data.length; i += 4) {
   var x = (i / 4) % image.width;
   var y = Math.floor((i / 4) / image.width);
@@ -24,13 +26,19 @@ for (var i = 0; i < image.data.length; i += 4) {
 
   if (x < halfImageWidth) {
     image.data[i + red] = 255;
+    redSet = 1;
+  } else {
+    redSet = 0;
   }
 
   if (y > halfImageHeight) {
     image.data[i + blue] = 255;
   } else {
-    image.data[i + green] = 255;
+    if (redSet === 0) {
+      image.data[i + green] = 255;
+    }
   }
+
 }
 
 context.putImageData(image, 25, 25);
