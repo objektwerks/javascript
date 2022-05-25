@@ -16,15 +16,18 @@ console.assert(imageHeight === image.height);
 for (var i = 0; i < image.data.length; i += 4) {
   var x = (i / 4) % image.width;
   var y = Math.floor((i / 4) / image.width);
+
   image.data[i + alpha] = 255;
 
   if (x < imageWidth / 2) {
     image.data[i + red] = 255;
-  } 
+  }
+
   if (y > imageHeight / 2) {
     image.data[i + blue] = 255;
   } else {
     image.data[i + green] = 255;
   }
 }
+
 context.putImageData(image, 25, 25);
