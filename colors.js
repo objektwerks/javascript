@@ -14,8 +14,8 @@ console.log("image width: " + image.width + " height: " + image.height);
 console.log("image data length: " + image.data.length);
 
 for (var i = 0; i < image.data.length; i += 4) {
-  var x = i;
-  var y = i;
+  var x = (i / 4) % image.width;
+  var y = Math.floor((i / 4) / image.width);
   if (x < image.width / 2) {
     image.data[i + red] = 255;
   } 
