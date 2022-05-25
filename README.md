@@ -4,7 +4,7 @@ Javascript
 
 Install
 -------
->For VSCode, install Live Server.
+>For VSCode users, install [Live Server](https://marketplace.visualstudio.com/items?itemName=ritwickdey.LiveServer).
 
 Run
 ---
